@@ -1,38 +1,345 @@
-.App {
-  text-align: center;
+/* Global Styles */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0; /* Tarayıcı varsayılan boşluklarını kaldırır */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Page Settings */
+.page-settings {
+  overflow-x: hidden;
+  color: #d1d5db; /* 'text-neutral-300' Tailwind renginin hex değeri */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh; /* Sayfanın tamamını kapsar */
+  background: radial-gradient(ellipse 80% 80% at 0% 100%, rgba(13, 101, 183, 0.3), rgba(255, 255, 255, 0));
+  background-color: #000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.fixed-background {
+  position: fixed;
+  top: 0;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+}
+
+.absolute-background {
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem; /* 'px-8' padding-left 8 Tailwind birimi (2rem) */
+  padding-right: 2rem; /* 'px-8' padding-right 8 Tailwind birimi (2rem) */
+}
+
+/* Hero Section */
+.element {
+  border-bottom: 1px solid #171717; /* 'border-neutral-900' Tailwind renginin hex değeri */
+  padding-bottom: 4rem;
+  padding-top: 4rem /* 'pb-4' padding-bottom 4 Tailwind birimi (1rem) */
+}
+
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint Tailwind'de 1024px ve üzeridir */
+  .hero-container {
+    flex-wrap: nowrap;
+    align-items: center;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.full-width {
+  width: 100%;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint Tailwind'de 1024px ve üzeridir */
+  .half-width {
+    width: 50%;
+  }
+}
+
+.flex-column {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint Tailwind'de 1024px ve üzeridir */
+  .lg-items-start {
+    align-items: flex-start;
+  }
+}
+
+.hero-header {
+  font-size: 3.5rem; /* 'text-6xl' Tailwind birimi 4rem */
+  font-weight: 100; /* 'font-thin' Tailwind ağırlığı */
+  letter-spacing: -0.01562em; /* 'tracking-tight' Tailwind birimi */
+}
+
+@media (min-width: 1024px) { /* lg breakpoint Tailwind'de 1024px ve üzeridir */
+  .hero-header {
+    margin-top: 4rem; /* 'lg:mt-16' Tailwind birimi 4rem */
+    font-size: 3.5rem; /* 'lg:text-8xl' Tailwind birimi 6rem */
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #979797, #3f6ca4, #094db4); /* 'from-pink-300' (#fcb6c1), 'via-slate-500' (#64748b), 'to-purple-500' (#7e22ce) Tailwind renk değerleri */
+  -webkit-background-clip: text; /* 'bg-clip-text' için */
+  background-clip: text;
+  color: transparent; /* 'text-transparent' için */
+  font-size: 2.25rem; /* 'text-4xl' Tailwind birimi 2.25rem */
+  letter-spacing: -0.01562em; /* 'tracking-tight' Tailwind birimi */
+}
+
+.hero-content {
+  margin-top: 0.5rem; /* 'my-2' Tailwind birimi 0.5rem */
+  margin-bottom: 0.5rem; /* 'my-2' Tailwind birimi 0.5rem */
+  max-width: 36rem; /* 'max-w-xl' Tailwind birimi 36rem */
+  padding-top: 1.5rem; /* 'py-6' Tailwind birimi 1.5rem */
+  padding-bottom: 1.5rem; /* 'py-6' Tailwind birimi 1.5rem */
+  font-weight: 300; /* 'font-light' Tailwind ağırlığı */
+  letter-spacing: -0.02em; /* 'tracking-tighter' Tailwind birimi */
+}
+
+.hero-image-width {
+  width: 100%;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint Tailwind'de 1024px ve üzeridir */
+  .hero-image-width {
+    width: 50%;
+
+  }
+  .hero-image-padding {
+    padding: 2rem; /* 'lg:p-8' Tailwind birimi 2rem */
+  }
+}
+
+.hero-image-flex-center {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* İsteğe bağlı: video köşelerini yuvarlatır */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* About */
+.about-border {
+  border-bottom: 1px solid #1f2937; /* Corresponds to border-neutral-900 */
+  padding-bottom: 4rem; /* Corresponds to pb-4 */
+}
+
+.about-header {
+  margin: 5rem 0; /* Corresponds to my-20 */
+  text-align: center; /* Corresponds to text-center */
+  font-size: 2.25rem; /* Corresponds to text-4xl */
+}
+
+.about-text {
+  color: #6b7280; /* Corresponds to text-neutral-500 */
+}
+
+.about-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint Tailwind'de 1024px ve üzeridir */
+  .about-flex-wrap {
+    flex-wrap: nowrap;
   }
 }
+
+.about-column-1, .about-column-2 {
+  width: 100%; /* Corresponds to w-full */
+}
+
+@media (min-width: 1024px) { /* Corresponds to lg: */
+  .about-column-1 {
+    width: 50%; /* Corresponds to lg:w-1/2 */
+    padding: 2rem; /* Corresponds to lg:p-8 */
+  }
+  .about-column-2 {
+    width: 50%; /* Corresponds to lg:w-1/2 */
+  }
+}
+
+.about-content, .about-justify-content {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Corresponds to items-center */
+}
+
+@media (min-width: 1024px) { /* Corresponds to lg: */
+  .about-justify-content {
+    justify-content: flex-start; /* Corresponds to lg:justify-start */
+  }
+}
+
+.about-image {
+  border-radius: 1rem;
+}
+
+.about-content-style {
+  margin: 0.5rem 0; /* Corresponds to my-2 */
+  max-width: 36rem; /* Corresponds to max-w-xl */
+  padding: 1.5rem 0; /* Corresponds to py-6 */
+}
+
+/* Features */
+.features-border {
+  border-bottom: 1px solid #2d3748; /* Corresponds to border-neutral-800 */
+  padding-bottom: 6rem; /* Corresponds to pb-24 */
+}
+
+.features-header-title {
+  margin: 5rem 0; /* Corresponds to my-20 */
+  text-align: center; /* Corresponds to text-center */
+  font-size: 2.25rem; /* Corresponds to text-4xl */
+}
+
+.features-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Corresponds to items-center */
+  justify-content: center; /* Corresponds to justify-center */
+  gap: 3rem; /* Corresponds to gap-4 */
+}
+
+.features-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.features-rounded-border {
+  border-radius: 1rem; /* Corresponds to rounded-2xl */
+  border: 4px solid #2d3748; /* Corresponds to border-4 and border-neutral-800 */
+  padding: 1rem; /* Corresponds to p-4 */
+}
+
+.velocity-icon-style {
+  font-size: 3rem; /* Corresponds to text-7xl */
+  color: #c20f0f; /* Corresponds to text-cyan-400 */
+}
+
+.altitude-icon-style {
+  font-size: 3rem; /* Corresponds to text-7xl */
+  color: #532c04; /* Corresponds to text-cyan-400 */
+}
+
+.vibration-icon-style {
+  font-size: 3rem; /* Corresponds to text-7xl */
+  color: #d3c41e; /* Corresponds to text-cyan-400 */
+}
+
+.buffer-icon-style {
+  font-size: 3rem; /* Corresponds to text-7xl */
+  color: #f4f4f4; /* Corresponds to text-cyan-400 */
+}
+
+.icon-description {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #fff; 
+  justify-content: center;
+}
+
+/* Partners */
+.partners-border {
+  border-bottom: 1px solid #1f2937; /* border-neutral-900 */
+  padding-bottom: 1rem; /* pb-4 */
+}
+
+.partners-header-title {
+  margin: 5rem 0; /* my-20 */
+  text-align: center; /* text-center */
+  font-size: 2.25rem; /* text-4xl */
+}
+
+.partners-item {
+  margin-bottom: 2rem; /* mb-8 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* lg:justify-center */
+}
+
+.partners-image-container {
+  width: 100%; /* w-full */
+}
+
+@media (min-width: 1024px) {
+  .partners-image-container {
+    width: 25%; /* lg:w-1/4 */
+  }
+}
+
+.partners-image {
+  margin-bottom: 1.5rem; /* mb-6 */
+  border-radius: 0.5rem; /* rounded */
+}
+
+.partners-details {
+  width: 100%; /* w-full */
+  max-width: 36rem; /* max-w-xl */
+}
+
+@media (min-width: 1024px) {
+  .partners-details {
+    width: 75%; /* lg:w-3/4 */
+  }
+}
+
+.partners-title {
+  margin-bottom: 0.5rem; /* mb-2 */
+  font-weight: 600; /* font-semibold */
+}
+
+.partners-description {
+  margin-bottom: 1rem; /* mb-4 */
+  color: #9ca3af; /* text-neutral-400 */
+}
+
+.tech-tag {
+  margin-right: 0.5rem; /* mr-2 */
+  border-radius: 0.25rem; /* rounded */
+  background-color: #1f2937; /* bg-neutral-900 */
+  padding: 0.25rem 0.5rem; /* Add padding for better appearance */
+  color: white; /* Ensure text color is readable */
+}
+
+/* Contact */
+.contact-border {
+  border-bottom: 1px solid #1f2937; /* border-neutral-900 */
+  padding-bottom: 5rem; /* pb-20 */
+}
+
+.contact-header-title {
+  margin: 2.5rem 0; /* my-10 */
+  text-align: center; /* text-center */
+  font-size: 2.25rem; /* text-4xl */
+}
+
+.contact-info {
+  text-align: center; /* text-center */
+  letter-spacing: -0.05em; /* tracking-tighter */
+}
+
+.contact-details {
+  margin: 1rem 0; /* my-4 */
+}
+
